@@ -44,7 +44,90 @@
     }
 }
 /* CARD CALL */
-.card:active{
+.card:hover {
     -webkit-animation: slit-in-diagonal-2 450ms linear both;
     animation: slit-in-diagonal-2 450ms linear both;
+}
+.card:hover{
+	-webkit-animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: shadow-drop-2-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+@keyframes shadow-drop-2-center {
+  0% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translateZ(50px);
+            transform: translateZ(50px);
+    -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+  }
+}
+
+
+/* 1. Animación para el texto del menú (Hover) */
+nav a:hover {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+/* 2. Animación para los botones (Al pasar el cursor - Hover) */
+.card button:hover {
+    -webkit-animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* 3. Animación para los botones (Al hacer clic - Active) */
+.card button:active {
+    -webkit-animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+            animation: scale-up-hor-left 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+/* Keyframes de text-focus-in (Menú) */
+@-webkit-keyframes text-focus-in {
+  0% { -webkit-filter: blur(12px); filter: blur(12px); opacity: 0; }
+  100% { -webkit-filter: blur(0px); filter: blur(0px); opacity: 1; }
+}
+@keyframes text-focus-in {
+  0% { -webkit-filter: blur(12px); filter: blur(12px); opacity: 0; }
+  100% { -webkit-filter: blur(0px); filter: blur(0px); opacity: 1; }
+}
+
+/* Keyframes de scale-up-bottom (Botón Hover) */
+@-webkit-keyframes scale-up-bottom {
+  0% { -webkit-transform: scale(0.5); transform: scale(0.5); -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; }
+  100% { -webkit-transform: scale(1); transform: scale(1); -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; }
+}
+@keyframes scale-up-bottom {
+  0% { -webkit-transform: scale(0.5); transform: scale(0.5); -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; }
+  100% { -webkit-transform: scale(1); transform: scale(1); -webkit-transform-origin: 50% 100%; transform-origin: 50% 100%; }
+}
+
+/* Keyframes de scale-up-hor-left (Botón Click) */
+@-webkit-keyframes scale-up-hor-left {
+  0% { -webkit-transform: scaleX(0.4); transform: scaleX(0.4); -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%; }
+  100% { -webkit-transform: scaleX(1); transform: scaleX(1); -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%; }
+}
+@keyframes scale-up-hor-left {
+  0% { -webkit-transform: scaleX(0.4); transform: scaleX(0.4); -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%; }
+  100% { -webkit-transform: scaleX(1); transform: scaleX(1); -webkit-transform-origin: 0% 0%; transform-origin: 0% 0%; }
 }
